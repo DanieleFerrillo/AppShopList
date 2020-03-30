@@ -41,7 +41,6 @@ public class MainActivity2 extends AppCompatActivity {
                 }else{
                     Prodotto aggiuntivo = new Prodotto(R.drawable.coffee, nome.getText().toString(), descrizione.getText().toString());
                     ShoplistDatabaseManager.getInstance(MainActivity2.this).addProdotto(aggiuntivo);
-                   // Singleton.getIstance().addProdotToList(aggiuntivo);
                     finish();
                 }
 

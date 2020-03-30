@@ -77,7 +77,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onItemElimina(int position) {
 //Singleton.getIstance().prodotti.remove(position)
-                ShoplistDatabaseManager.getInstance(MainActivity.this).deleteProdottoByIdD(position);
+                ShoplistDatabaseManager.getInstance(MainActivity.this).deleteProdotto(DbConstants.PRODOTTI_TABLE_NOME);
                 refresh();
             }
 
