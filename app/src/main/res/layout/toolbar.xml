@@ -15,6 +15,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="+"
+        android:textSize="70px"
+        android:background="@drawable/bottone_arrotondato"
         android:layout_gravity="right"/>
     </androidx.appcompat.widget.Toolbar>
 
