@@ -2,6 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#333333"
     android:orientation="vertical">
 
 
@@ -9,6 +10,7 @@
         android:id="@+id/textView1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="70px"
         android:gravity="center"
         android:text="Inserisci il nome " />
 
@@ -16,23 +18,25 @@
         android:id="@+id/testo1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:inputType="text"/>
+        android:inputType="text" />
+
     <TextView
         android:id="@+id/textView2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
         android:text="Inserisci la descrizione" />
+
     <EditText
         android:id="@+id/testo2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:inputType="text"/>
+        android:inputType="text" />
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="#8FFFFFFF"
+        android:background="#FFFFFF"
         android:gravity="center_horizontal"
         android:orientation="horizontal">
 
@@ -40,6 +44,8 @@
             android:id="@+id/aggiungi"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_margin="30px"
+            android:background="@drawable/bottone_arrotondato"
             android:gravity="center"
             android:text="AGGIUNGI" />
     </LinearLayout>
@@ -47,21 +53,22 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#8FFFFFFF"
+        android:background="#FFFFFF"
         android:gravity="center_horizontal"
         android:orientation="horizontal">
 
         <Button
             android:id="@+id/uccidi_activity"
-            android:layout_width="match_parent"
+            android:layout_width="300dp"
             android:layout_height="wrap_content"
+            android:layout_margin="30px"
+            android:background="@drawable/bottone_arrotondato"
             android:gravity="center"
-            android:text="TORNA ALLA PAGINA PRECEDENTE" />
+            android:text="TORNA ALLA PAGINA PRECEDENTE"
+            android:textSize="15sp"/>
 
 
-</LinearLayout>
-
-
+    </LinearLayout>
 
 
 </LinearLayout>

@@ -71,5 +71,3 @@ public class ShoplistDatabaseManager extends DatabaseManager {
         database.delete(DbConstants.PRODOTTI_TABLE,)
     }
 }
-
-//ciao
