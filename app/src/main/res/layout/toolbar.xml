@@ -2,22 +2,24 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="55dp"
-    android:background="#ffffff">
+    android:background="?attr/colorPrimary">
 
 
     <androidx.appcompat.widget.Toolbar
-            android:id="@+id/toolbar1"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="?attr/colorPrimary">
-    <Button
-        android:id="@+id/btn_aggiungi"
-        android:layout_width="wrap_content"
+        android:id="@+id/toolbar1"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="+"
-        android:textSize="70px"
-        android:background="@drawable/bottone_arrotondato"
-        android:layout_gravity="right"/>
+        android:layout_marginRight="20px"
+        android:background="?attr/colorPrimary">
+
+        <Button
+            android:id="@+id/btn_aggiungi"
+            android:layout_width="70sp"
+            android:layout_height="40sp"
+            android:layout_gravity="right"
+            android:background="@drawable/bottone_arrotondato"
+            android:text="+"
+            android:textSize="70px" />
     </androidx.appcompat.widget.Toolbar>
 
 </LinearLayout>
