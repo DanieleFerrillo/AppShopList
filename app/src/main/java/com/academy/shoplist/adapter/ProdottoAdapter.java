@@ -52,7 +52,13 @@ public class ProdottoAdapter extends RecyclerView.Adapter<ProdottoAdapter.Prodot
             elimina.setOnClickListener(new View.OnClickListener(){
                 @Override
                 public void onClick(View v) {
-                    interfaccia.onItemElimina(getAdapterPosition());
+                    if(interfaccia != null){
+                        int position=getAdapterPosition();
+                        if(position != RecyclerView.NO_POSITION){
+                            interfaccia.onItemElimina(getAdapterPosition());
+                        }
+                    }
+
                 }
             });
             modifica.setOnClickListener(new View.OnClickListener() {

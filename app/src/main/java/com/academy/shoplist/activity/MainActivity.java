@@ -1,10 +1,12 @@
 package com.academy.shoplist.activity;
 
 import androidx.annotation.Nullable;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -34,7 +36,7 @@ public class MainActivity extends AppCompatActivity {
         this.requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.activity_main);
 
-        ShoplistDatabaseManager.getInstance(MainActivity.this).addProdotto(new Prodotto(R.drawable.washing_machine,"nome di test","desc di test"));
+        ShoplistDatabaseManager.getInstance(MainActivity.this).getProdotti();
       setUp();
 
         Button aggiungi=(Button)findViewById(R.id.btn_aggiungi);
@@ -76,9 +78,37 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void onItemElimina(int position) {
-//Singleton.getIstance().prodotti.remove(position)
+
+                final AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
+                builder.setTitle("Elimina Prodotto");
+                builder.setMessage("Sei sicuro di voler cancellare il prodotto selezionato?");
+                builder.setCancelable(true);
+                builder.setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int which) {
+
+                        try {
+                            ShoplistDatabaseManager.getInstance(MainActivity.this).deleteProdotto();
+                        } catch (Exception e) {
+                            e.printStackTrace();
+                        }
+
+                        refresh();
+                    }
+                });
+                builder.setNegativeButton(android.R.string.no, new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int which) {
+                        dialog.dismiss();
+                    }
+                });
+                AlertDialog dialog = builder.show();
+
+
+
+               /*
+                 refresh();
                 ShoplistDatabaseManager.getInstance(MainActivity.this).deleteProdotto(DbConstants.PRODOTTI_TABLE_NOME);
-                refresh();
+                */
+
             }
 
             @Override
