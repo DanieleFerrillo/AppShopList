@@ -45,12 +45,7 @@
             android:layout_alignParentEnd="true"
             android:src="@drawable/img_elimina" />
 
-        <ImageView
-            android:id="@+id/img_modifica"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:layout_toLeftOf="@+id/img_elimina"
-            android:src="@drawable/img_modifica" />
+
 
     </RelativeLayout>
 

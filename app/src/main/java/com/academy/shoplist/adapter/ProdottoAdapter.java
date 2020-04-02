@@ -27,7 +27,7 @@ public class ProdottoAdapter extends RecyclerView.Adapter<ProdottoAdapter.Prodot
         public TextView nomeProdotto;
         public TextView descrizione;
         public ImageView elimina;
-        public ImageView modifica;
+
 
         public ProdottoViewHolder(@NonNull View itemView, final GestioneClick interfaccia) {
             super(itemView);
@@ -35,7 +35,7 @@ public class ProdottoAdapter extends RecyclerView.Adapter<ProdottoAdapter.Prodot
             nomeProdotto = itemView.findViewById(R.id.nome_prodotto);
             descrizione = itemView.findViewById(R.id.descrizione_prodotto);
             elimina =(ImageView) itemView.findViewById(R.id.img_elimina);
-            modifica =(ImageView) itemView.findViewById(R.id.img_modifica);
+          
 
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -61,12 +61,7 @@ public class ProdottoAdapter extends RecyclerView.Adapter<ProdottoAdapter.Prodot
 
                 }
             });
-            modifica.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    interfaccia.onItemModifica(getAdapterPosition());
-                }
-            });
+
         }
     }
 

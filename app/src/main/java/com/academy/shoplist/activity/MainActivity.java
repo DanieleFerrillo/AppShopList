@@ -108,11 +108,7 @@ public class MainActivity extends AppCompatActivity {
                 });
                 AlertDialog dialog = builder.show();
             }
-            @Override
-            //TODO qui va il fragment
-            public void onItemModifica(int position) {
 
-            }
         });
 
     }
