@@ -16,7 +16,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 public class ProdottoAdapter extends RecyclerView.Adapter<ProdottoAdapter.ProdottoViewHolder> {
-    private ArrayList<Prodotto> prodottiList = new ArrayList<>();
+    public ArrayList<Prodotto> prodottiList = new ArrayList<>();
     private GestioneClick interfaccia;
 
     public void setOnItemClickListener(GestioneClick interfaccia){

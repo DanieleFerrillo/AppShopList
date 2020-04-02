@@ -74,8 +74,11 @@ public class MainActivity extends AppCompatActivity {
         adapter.setOnItemClickListener(new GestioneClick() {
             @Override
             public void onItemClick(int position) {
-                //TODO fare un'altra activity che riporta la schermata con il prodotto che hai selezionato
-                Toast.makeText(MainActivity.this,"hai cliccato l'elemento "+Singleton.getIstance().prodotti.get(position).getNome(),Toast.LENGTH_LONG).show();
+                //Toast.makeText(MainActivity.this,"hai cliccato l'elemento "+Singleton.getIstance().prodotti.get(position).getNome(),Toast.LENGTH_LONG).show();
+                Cursor cursore=ShoplistDatabaseManager.getInstance(MainActivity.this).getProdotti();
+                ArrayList<Prodotto> listaProdotti= ShoplistDatabaseManager.getInstance(MainActivity.this).getProdottiByCursor(cursore);
+                Prodotto prodotto=listaProdotti.get(position);
+                Toast.makeText(MainActivity.this,"hai cliccato l'elemento " + adapter.prodottiList.get(position).getNome(),Toast.LENGTH_LONG).show();
                 refresh();
             }
 

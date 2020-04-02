@@ -5,6 +5,7 @@ import android.content.Context;
 import android.database.Cursor;
 import android.util.Log;
 
+import com.academy.shoplist.activity.MainActivity;
 import com.academy.shoplist.bean.Prodotto;
 import com.academy.shoplist.constants.DbConstants;
 import com.academy.shoplist.database.DatabaseManager;
@@ -74,8 +75,5 @@ public class ShoplistDatabaseManager extends DatabaseManager {
         Log.d("Prodotti eliminati",": " + database.delete(DbConstants.PRODOTTI_TABLE,DbConstants.PRODOTTI_TABLE_NOME + " = ?",new String[]{nome}));
 
     }
-
-
-
-
+    
 }
