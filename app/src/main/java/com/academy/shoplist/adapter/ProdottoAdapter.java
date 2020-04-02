@@ -49,6 +49,7 @@ public class ProdottoAdapter extends RecyclerView.Adapter<ProdottoAdapter.Prodot
                     }
                 }
             });
+
             elimina.setOnClickListener(new View.OnClickListener(){
                 @Override
                 public void onClick(View v) {
@@ -61,6 +62,9 @@ public class ProdottoAdapter extends RecyclerView.Adapter<ProdottoAdapter.Prodot
 
                 }
             });
+
+
+
             modifica.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
