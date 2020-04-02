@@ -75,11 +75,13 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onItemClick(int position) {
                 //Toast.makeText(MainActivity.this,"hai cliccato l'elemento "+Singleton.getIstance().prodotti.get(position).getNome(),Toast.LENGTH_LONG).show();
-                Cursor cursore=ShoplistDatabaseManager.getInstance(MainActivity.this).getProdotti();
-                ArrayList<Prodotto> listaProdotti= ShoplistDatabaseManager.getInstance(MainActivity.this).getProdottiByCursor(cursore);
-                Prodotto prodotto=listaProdotti.get(position);
-                Toast.makeText(MainActivity.this,"hai cliccato l'elemento " + adapter.prodottiList.get(position).getNome(),Toast.LENGTH_LONG).show();
-                refresh();
+//                Cursor cursore=ShoplistDatabaseManager.getInstance(MainActivity.this).getProdotti();
+//                ArrayList<Prodotto> listaProdotti= ShoplistDatabaseManager.getInstance(MainActivity.this).getProdottiByCursor(cursore);
+//                Prodotto prodotto=listaProdotti.get(position);
+//                Toast.makeText(MainActivity.this,"hai cliccato l'elemento " + adapter.prodottiList.get(position).getNome(),Toast.LENGTH_LONG).show();
+                Intent intent = new Intent(MainActivity.this,DettaglioProdottoActivity.class);
+                startActivityForResult(intent,100);
+                //refresh();
             }
 
             @Override
