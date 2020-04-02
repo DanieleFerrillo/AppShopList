@@ -75,5 +75,5 @@ public class ShoplistDatabaseManager extends DatabaseManager {
         Log.d("Prodotti eliminati",": " + database.delete(DbConstants.PRODOTTI_TABLE,DbConstants.PRODOTTI_TABLE_NOME + " = ?",new String[]{nome}));
 
     }
-    
+
 }
