@@ -10,7 +10,6 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
-import android.view.LayoutInflater;
 import android.view.View;
 import android.view.Window;
 import android.widget.Button;
@@ -27,12 +26,11 @@ import com.academy.shoplist.utility.Utilitis;
 
 import java.util.ArrayList;
 
-import static android.view.LayoutInflater.*;
-
 public class MainActivity extends AppCompatActivity {
     private RecyclerView recyclerView;
     private ProdottoAdapter adapter;
     private RecyclerView.LayoutManager layoutManager;
+
 
 
     @Override
@@ -41,60 +39,48 @@ public class MainActivity extends AppCompatActivity {
         this.requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.activity_main);
 
-
         ShoplistDatabaseManager.getInstance(MainActivity.this).getProdotti();
       setUp();
 
-        ShoplistDatabaseManager.getInstance(MainActivity.this).addProdotto(new Prodotto(R.drawable.washing_machine, "nome di test", "desc di test"));
-        setUp();
-
-
-        Button aggiungi = (Button) findViewById(R.id.btn_aggiungi);
+        Button aggiungi=(Button)findViewById(R.id.btn_aggiungi);
 
         aggiungi.setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View v) {
                 Intent intent2ndActivity = new Intent(MainActivity.this, MainActivity2.class);
-                startActivityForResult(intent2ndActivity, 100);
+                startActivityForResult(intent2ndActivity,100);
             }
         });
 
     }
-
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-        if (requestCode == 100) {
+        if(requestCode==100){
             refresh();
         }
     }
-
-    private void setUp() {
-        recyclerView = (RecyclerView) findViewById(R.id.recyclerView);
+    private void setUp(){
+        recyclerView=(RecyclerView) findViewById(R.id.recyclerView);
         recyclerView.setHasFixedSize(true);
-        layoutManager = new LinearLayoutManager(this);
-        adapter = new ProdottoAdapter(ShoplistDatabaseManager.getInstance(MainActivity.this).getProdottiByCursor(ShoplistDatabaseManager.getInstance(MainActivity.this).getProdotti()));
+        layoutManager=new LinearLayoutManager(this);
+        adapter=new ProdottoAdapter(ShoplistDatabaseManager.getInstance(MainActivity.this).getProdottiByCursor(ShoplistDatabaseManager.getInstance(MainActivity.this).getProdotti()));
         recyclerView.setLayoutManager(layoutManager);
         recyclerView.setAdapter(adapter);
     }
-
-    private void refresh() {
+    private void refresh(){
         setUp();
         adapter.setOnItemClickListener(new GestioneClick() {
             @Override
             public void onItemClick(int position) {
                 //TODO fare un'altra activity che riporta la schermata con il prodotto che hai selezionato
-                Toast.makeText(MainActivity.this, "hai cliccato l'elemento " + Singleton.getIstance().prodotti.get(position).getNome(), Toast.LENGTH_LONG).show();
+                Toast.makeText(MainActivity.this,"hai cliccato l'elemento "+Singleton.getIstance().prodotti.get(position).getNome(),Toast.LENGTH_LONG).show();
                 refresh();
             }
 
             @Override
-
-
-
-
-            public void onItemElimina(final int position){
+            public void onItemElimina(final int position) {
 
                 final AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
                 builder.setTitle("Elimina Prodotto");
@@ -103,41 +89,25 @@ public class MainActivity extends AppCompatActivity {
                 builder.setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int which) {
 
-
                         try {
                             Cursor cursore=ShoplistDatabaseManager.getInstance(MainActivity.this).getProdotti();
-                            ArrayList<Prodotto> listaProdotti= ShoplistDatabaseManager.getInstance(MainActivity.this).getProdottiByCursor(cursore);
-                         Prodotto prodotto= listaProdotti.get(position);
-                         ShoplistDatabaseManager.getInstance(MainActivity.this).deleteProdotto(prodotto.getNome());
+                          ArrayList<Prodotto> listaProdotti= ShoplistDatabaseManager.getInstance(MainActivity.this).getProdottiByCursor(cursore);
+                            Prodotto prodotto=listaProdotti.get(position);
+                            ShoplistDatabaseManager.getInstance(MainActivity.this).deleteProdotto(prodotto.getNome());
                         } catch (Exception e) {
                             e.printStackTrace();
                         }
 
                         refresh();
-
-                    }});
+                    }
+                });
                 builder.setNegativeButton(android.R.string.no, new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int which) {
                         dialog.dismiss();
-
                     }
-
-                    }
-
-
-                );
-
-
-
-
-               /*
-                 refresh();
-                ShoplistDatabaseManager.getInstance(MainActivity.this).deleteProdotto(DbConstants.PRODOTTI_TABLE_NOME);
-                */
-
-
+                });
+                AlertDialog dialog = builder.show();
             }
-
             @Override
             //TODO qui va il fragment
             public void onItemModifica(int position) {
@@ -147,3 +117,5 @@ public class MainActivity extends AppCompatActivity {
 
     }
 }
+
+//hello home

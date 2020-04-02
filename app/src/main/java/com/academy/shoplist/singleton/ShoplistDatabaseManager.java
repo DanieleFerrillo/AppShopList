@@ -67,9 +67,15 @@ public class ShoplistDatabaseManager extends DatabaseManager {
     public Cursor getProdotti() {
         return database.query(DbConstants.PRODOTTI_TABLE,null,null,null,null,null,null);
     }
+
     public void deleteProdotto(String nome)
     {
+
         Log.d("Prodotti eliminati",": " + database.delete(DbConstants.PRODOTTI_TABLE,DbConstants.PRODOTTI_TABLE_NOME + " = ?",new String[]{nome}));
+
     }
+
+
+
 
 }

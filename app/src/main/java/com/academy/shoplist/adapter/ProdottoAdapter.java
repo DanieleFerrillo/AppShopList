@@ -49,7 +49,6 @@ public class ProdottoAdapter extends RecyclerView.Adapter<ProdottoAdapter.Prodot
                     }
                 }
             });
-
             elimina.setOnClickListener(new View.OnClickListener(){
                 @Override
                 public void onClick(View v) {
@@ -62,9 +61,6 @@ public class ProdottoAdapter extends RecyclerView.Adapter<ProdottoAdapter.Prodot
 
                 }
             });
-
-
-
             modifica.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
@@ -94,6 +90,9 @@ public class ProdottoAdapter extends RecyclerView.Adapter<ProdottoAdapter.Prodot
         holder.immagine.setImageResource(currentProdotto.getImmagine());
         holder.nomeProdotto.setText(currentProdotto.getNome());
         holder.descrizione.setText(currentProdotto.getDescrizione());
+
+
+
     }
 
     @Override
