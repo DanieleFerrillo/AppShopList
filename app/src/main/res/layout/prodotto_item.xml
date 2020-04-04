@@ -16,7 +16,7 @@
             android:layout_width="45dp"
             android:layout_height="45dp"
             android:padding="2dp"
-            android:src="@drawable/ic_shop" />
+            android:background="@drawable/ic_shop" />
 
         <TextView
             android:id="@+id/nome_prodotto"
