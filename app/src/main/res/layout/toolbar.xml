@@ -18,6 +18,7 @@
             android:fontFamily="@font/arbutus_regular"
             android:gravity="end"
             android:text="LISTA DELLA SPESA"
+            android:textColor="#ffffff"
             android:textSize="60px"/>
 
         <Button
