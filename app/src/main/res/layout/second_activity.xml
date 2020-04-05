@@ -5,15 +5,14 @@
     android:background="#333333"
     android:orientation="vertical">
 
-
     <TextView
         android:id="@+id/textView1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="70px"
         android:gravity="center"
-        android:textColor="#ffffff"
-        android:text="Inserisci il nome " />
+        android:text="Inserisci il nome"
+        android:textColor="#ffffff" />
 
     <EditText
         android:id="@+id/testo1"
@@ -67,10 +66,8 @@
             android:background="@drawable/bottone_arrotondato"
             android:gravity="center"
             android:text="TORNA ALLA PAGINA PRECEDENTE"
-            android:textSize="15sp"/>
-
+            android:textSize="15sp" />
 
     </LinearLayout>
-
 
 </LinearLayout>

@@ -5,9 +5,9 @@ public class Prodotto {
     private String nome;
     private String descrizione;
 
-    public Prodotto(){
-
+    public Prodotto() {
     }
+
     public Prodotto(int immagine, String nome, String descrizione) {
         this.immagine = immagine;
         this.nome = nome;
@@ -37,5 +37,4 @@ public class Prodotto {
     public void setDescrizione(String descrizione) {
         this.descrizione = descrizione;
     }
-
 }

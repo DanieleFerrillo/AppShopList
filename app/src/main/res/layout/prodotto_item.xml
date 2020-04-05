@@ -15,9 +15,9 @@
             android:id="@+id/immagine_prodotto"
             android:layout_width="43dp"
             android:layout_height="43dp"
-            android:padding="2dp"
             android:layout_marginTop="6px"
-            android:background="@drawable/ic_shop" />
+            android:background="@drawable/ic_shop"
+            android:padding="2dp" />
 
         <TextView
             android:id="@+id/nome_prodotto"
@@ -46,10 +46,9 @@
             android:layout_width="50dp"
             android:layout_height="40dp"
             android:layout_alignParentEnd="true"
-            android:layout_marginEnd="1dp"
             android:layout_marginTop="5dp"
+            android:layout_marginEnd="1dp"
             android:src="@drawable/img_elimina" />
-
 
     </RelativeLayout>
 

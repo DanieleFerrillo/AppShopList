@@ -4,7 +4,6 @@
     android:layout_height="55dp"
     android:background="?attr/colorPrimary">
 
-
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar1"
         android:layout_width="match_parent"
@@ -19,7 +18,7 @@
             android:gravity="end"
             android:text="LISTA DELLA SPESA"
             android:textColor="#ffffff"
-            android:textSize="60px"/>
+            android:textSize="60px" />
 
         <Button
             android:id="@+id/btn_aggiungi"
@@ -29,6 +28,7 @@
             android:background="@drawable/bottone_arrotondato"
             android:text="+"
             android:textSize="70px" />
+
     </androidx.appcompat.widget.Toolbar>
 
 </LinearLayout>
